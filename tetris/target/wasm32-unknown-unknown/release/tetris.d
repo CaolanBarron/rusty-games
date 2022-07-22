@@ -1,0 +1,1 @@
+C:\Users\caola\Documents\Software\ Dev\rustygames\tetris\target\wasm32-unknown-unknown\release\tetris.wasm: C:\Users\caola\Documents\Software\ Dev\rustygames\tetris\src\lib.rs C:\Users\caola\Documents\Software\ Dev\rustygames\tetris\src\shape.rs C:\Users\caola\Documents\Software\ Dev\rustygames\tetris\src\tetris.rs
