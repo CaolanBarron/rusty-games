@@ -1,0 +1,1 @@
+C:\Users\caola\Documents\Software\ Dev\snake\target\wasm32-unknown-unknown\release\snake.wasm: C:\Users\caola\Documents\Software\ Dev\snake\src\lib.rs C:\Users\caola\Documents\Software\ Dev\snake\src\random.rs C:\Users\caola\Documents\Software\ Dev\snake\src\snake.rs
