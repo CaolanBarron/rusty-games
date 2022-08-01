@@ -1,0 +1,1 @@
+/home/caolan/Documents/Programming/Rust/rusty-games/tictactoe/target/wasm32-unknown-unknown/release/tictactoe.wasm: /home/caolan/Documents/Programming/Rust/rusty-games/tictactoe/src/frontend.rs /home/caolan/Documents/Programming/Rust/rusty-games/tictactoe/src/lib.rs

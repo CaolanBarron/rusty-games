@@ -1,0 +1,88 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+    <style>
+
+      :root{
+        --bg-dark: #034159;
+        --bg-neut: #025951;
+        --bg-light: #02735E;
+        --text-dark: #038C3E;
+        --text-light: #0CF25D;
+      }
+
+      html, body{
+        height: 100%;
+        overflow:hidden;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-dark);
+      }
+      .root{
+        display: grid;
+        justify-items: center;
+      }
+      .board-base{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .board{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: var(--bg-light); 
+      }
+      .square{
+        font-size: 6rem;
+        height: 10rem;
+        width: 10rem;
+        background-color: var(--bg-light);
+      }
+
+      h1{
+        margin: 0%;
+        font-size: 2rem;
+        color: var(--text-light);
+      }
+      h2{
+        margin:1.5rem;
+        font-size: 1rem;
+        color: var(--text-dark);
+      }
+    </style>
+  
+<link rel="preload" href="/tictactoe-c89d0687f5812cf5_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/tictactoe-c89d0687f5812cf5.js"></head> 
+<body>
+
+<script type="module">import init from '/tictactoe-c89d0687f5812cf5.js';init('/tictactoe-c89d0687f5812cf5_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
